@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  background: var(--white);
+  .nav {
+    display: flex;
+    height: 4.5rem;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .headerNav {
+    ul {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      li a {
+        font-size: 16px;
+        padding: 0.75rem;
+        transition: color 0.2s ease 0s;
+        &:hover,
+        &.active {
+          color: var(--orange);
+        }
+      }
+    }
+  }
+}
