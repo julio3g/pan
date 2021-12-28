@@ -101,6 +101,17 @@
   }
 }
 
+.slide {
+  > div {
+    position: relative;
+    .react-multi-carousel-list {
+      position: static;
+      overflow: hidden;
+      margin: 0px -1.2rem;
+    }
+  }
+}
+
 @media (max-width: 720px) {
   .banner {
     grid-template-columns: 1fr;
