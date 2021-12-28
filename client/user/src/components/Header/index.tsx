@@ -1,25 +1,47 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ActiveLink } from '../ActiveLink';
+// import { NavLink, useLocation } from 'rea';
 import styles from './styles.module.scss';
-import Logo from '../../../public/images/logo.svg';
+import Logo from '../../assets/logo.svg';
+import useMedia from '../../Hooks/useMedia';
+import React from 'react';
+import { useRouter } from 'next/router';
 
 export function Header() {
+  const mobile = useMedia('(max-width: 720px)');
+  const [mobileMenu, setMobileMenu] = React.useState(false);
+
+  const { pathname } = useRouter();
+
+  React.useEffect(() => {
+    setMobileMenu(false);
+  }, [pathname]);
+
   return (
     <header className={styles.header}>
-      <nav className={`container ${styles.nav}`}>
+      <nav className={`container `}>
         <Link href="/" passHref>
           <a>
-            {/* <Image
-              src="/images/logo.svg"
-              alt="Construágil logo"
-              width={182}
-              height={40}
-            /> */}
             <Logo />
           </a>
         </Link>
-        <nav className={styles.headerNav}>
+        {mobile && (
+          <button
+            type="button"
+            aria-label="Menu"
+            className={`${styles.mobileButton} ${
+              mobileMenu && styles.mobileButtonActive
+            }`}
+            onClick={() => setMobileMenu(!mobileMenu)}
+          >
+            <div />
+          </button>
+        )}
+        <nav
+          className={`${mobile ? styles.navMobile : styles.nav} ${
+            mobileMenu && styles.navMobileActive
+          }`}
+        >
           <ul>
             <li>
               <ActiveLink activeClassName={styles.active} href="/">

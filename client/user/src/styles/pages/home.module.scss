@@ -4,10 +4,9 @@
   align-items: center;
   padding-bottom: 10rem;
   grid-template-columns: 1fr 1fr;
-
   h1 {
     font-weight: 500;
-    max-width: 28rem;
+    max-width: calc(100% - 2rem);
     font-size: 2.5rem;
     margin-bottom: 3rem;
   }
@@ -39,18 +38,20 @@
   margin-bottom: 4rem;
   h2 {
     font-size: 2rem;
+    text-align: center;
     margin-bottom: 1.5rem;
   }
   ul {
     gap: 1.5rem;
     display: grid;
-    list-style: none;
     margin-bottom: 1.5rem;
     grid-template-columns: repeat(4, 1fr);
     li {
       height: 8rem;
-      background: var(--white);
-      border-radius: 0.75rem;
+      position: relative;
+      img {
+        border-radius: 0.75rem;
+      }
     }
   }
   a {
@@ -65,21 +66,26 @@
   ul {
     gap: 1.5rem;
     display: grid;
-    list-style: none;
     color: var(--white);
     grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 840px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      li {
+        min-width: 18rem;
+      }
+    }
     li {
       display: flex;
       align-items: center;
       div {
         opacity: 0.5;
+        display: flex;
         width: fit-content;
         padding: 1.5rem;
         border-radius: 0.75rem;
         background: var(--white);
-        svg {
-          display: block;
-        }
       }
       span {
         text-align: center;
@@ -91,6 +97,26 @@
       &:nth-child(3) span {
         max-width: 11rem;
       }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .banner {
+    grid-template-columns: 1fr;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    div {
+      text-align: center;
+      margin-bottom: 2rem;
+      a {
+        margin: 0 auto;
+      }
+    }
+  }
+  .clients {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

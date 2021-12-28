@@ -5,6 +5,7 @@ import Instagram from '../../assets/instagram.svg';
 import IconButtonTop from '../../assets/top.svg';
 import Link from 'next/link';
 import { ActiveLink } from '../ActiveLink';
+import Image from 'next/image';
 
 export function Footer() {
   function scrollToTop() {
@@ -19,7 +20,12 @@ export function Footer() {
       <div className={`container ${styles.footerContent}`}>
         <div className={styles.logo}>
           <div>
-            <LogoFooter />
+            <Image
+              src="/assets/logo-footer.svg"
+              alt="Logo footer"
+              width="82"
+              height="71.75"
+            />
             <h1>
               Construindo sonhos<span>.</span>
             </h1>

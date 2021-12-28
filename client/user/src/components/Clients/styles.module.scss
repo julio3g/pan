@@ -1,0 +1,40 @@
+.clients {
+  .imagesClients {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    li {
+      position: relative;
+      height: 8rem;
+      img {
+        border-radius: 0.75rem;
+      }
+    }
+  }
+  .button {
+    border: 0;
+    gap: 0.5rem;
+    width: 12rem;
+    // display: flex;
+    display: none;
+    padding: 0.75rem;
+    align-items: center;
+    margin: 1.5rem auto 0;
+    border-radius: 0.75rem;
+    justify-content: center;
+    background: var(--gray-40);
+    transition: background 0.2s ease 0s;
+    &:hover {
+      background: #ebe7e6;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .clients {
+    .imagesClients {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

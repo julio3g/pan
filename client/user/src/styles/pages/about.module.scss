@@ -23,6 +23,9 @@
         border-radius: 3px;
         margin: 0.25rem 0 0.75rem;
       }
+      p {
+        line-height: 1.5;
+      }
     }
   }
   .clients {
@@ -42,14 +45,24 @@
         align-items: center;
         justify-content: center;
         padding: 1rem;
-        transition: transform 0.2s ease;
-
+        transition: transform 0.2s ease 0s;
+        .imageLogo {
+          height: 56px;
+          width: 160px;
+          mask-position: center;
+          mask-repeat: no-repeat;
+          background: var(--gray-500);
+          transition: background 0.2s ease 0s;
+        }
         svg {
           fill: var(--gray-500);
           transition: fill 0.2s ease 0s;
         }
         &:hover {
           transform: translateY(-2px);
+          .imageLogo {
+            background: var(--orange);
+          }
           svg {
             fill: var(--orange);
           }
@@ -64,6 +77,9 @@
     padding-bottom: 4rem;
     .wrapperInformation {
       grid-template-columns: 1fr;
+    }
+    .clients .wrapper {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

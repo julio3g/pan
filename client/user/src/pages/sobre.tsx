@@ -1,13 +1,20 @@
-import styles from '../styles/pages/about.module.scss';
-import { Title } from '../components/Title';
-// import RandonLogo from '../assets/randon.svg';
-import VideplastLogo from '../assets/videplast.svg';
-import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Title } from '../components/Title';
+import styles from '../styles/pages/about.module.scss';
 
 export default function About() {
   return (
     <main className={`container ${styles.about}`}>
+      <Head>
+        <title>Sobre Nós - Construágil</title>
+        <meta
+          name="description"
+          content="Empresa de Construção Civil, especializada em pisos industriais - Epóxi, Uretano AN e Argamassados. Serviços de mini e retroescavadeira, e caçamba."
+        />
+        <meta name="title" content="Sobre Nós - Construágil" />
+      </Head>
       <Title title="Sobre Nós" description="conheça mais a Construágil" />
       <p>
         São mais de 20 anos de experiência no ramo da construção civil,
@@ -45,35 +52,89 @@ export default function About() {
       <section className={styles.clients}>
         <h2>Nossos Clientes</h2>
         <ul className={styles.wrapper}>
-          <div>
-            <Image
-              src="/images/polpabrasil.svg"
-              alt="Image client"
-              height="56"
-              width="160"
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/duelo.svg"
-              alt="Image client"
-              height="56"
-              width="160"
-            />
-          </div>
-
-          <Link href="http://www.vinhosrandon.com.br">
+          {/* <Link href="http://www.vinhosrandon.com.br">
             <a target="_blank">
               <li>
-                <VideplastLogo />
+                <style jsx>
+                  {`
+                    .imageLogo {
+                      mask: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/icon-bike-black.svg');
+                    }
+                  `}
+                </style>
+                <span className={`imageLogo ${styles.imageLogo} `} />
+              </li>
+            </a>
+          </Link> */}
+          <Link href="http://www.polpabrasil.com.br">
+            <a target="_blank">
+              <li>
+                <Image
+                  src="/shared/clients/polpabrasil.svg"
+                  alt="Image client"
+                  height="56"
+                  width="160"
+                />
               </li>
             </a>
           </Link>
-
+          <Link href="http://www.vinhosrandon.com.br">
+            <a target="_blank">
+              <li>
+                <Image
+                  src="/shared/clients/randon.svg"
+                  alt="Image client"
+                  height="56"
+                  width="160"
+                />
+              </li>
+            </a>
+          </Link>
           <Link href="https://www.videplast.com.br">
             <a target="_blank">
               <li>
-                <VideplastLogo />
+                <Image
+                  src="/shared/clients/videplast.svg"
+                  alt="Image client"
+                  height="56"
+                  width="160"
+                />
+              </li>
+            </a>
+          </Link>
+          <Link href="http://www.cpel.ind.br">
+            <a target="_blank">
+              <li>
+                <Image
+                  src="/shared/clients/cpel.svg"
+                  alt="Image client"
+                  height="56"
+                  width="160"
+                />
+              </li>
+            </a>
+          </Link>
+          <Link href="http://caprima.com.br">
+            <a target="_blank">
+              <li>
+                <Image
+                  src="/shared/clients/caprima.svg"
+                  alt="Image client"
+                  height="56"
+                  width="160"
+                />
+              </li>
+            </a>
+          </Link>
+          <Link href="http://www.vinhosduelo.com.br">
+            <a target="_blank">
+              <li>
+                <Image
+                  src="/shared/clients/duelo.svg"
+                  alt="Image client"
+                  height="56"
+                  width="160"
+                />
               </li>
             </a>
           </Link>
