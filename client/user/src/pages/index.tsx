@@ -57,8 +57,8 @@ export default function Home() {
           <li>
             <span className={styles.overlay}></span>
             <Image
-              src="/shared/MG_1564-scaled-e1596194843126.jpg"
-              alt=""
+              src="/shared/services/image-1.jpg"
+              alt="image service"
               layout="fill"
               objectFit="cover"
             />
@@ -66,8 +66,8 @@ export default function Home() {
           <li>
             <span className={styles.overlay}></span>
             <Image
-              src="/shared/MG_1564-scaled-e1596194843126.jpg"
-              alt=""
+              src="/shared/services/image-2.jpg"
+              alt="image service"
               layout="fill"
               objectFit="cover"
             />
@@ -75,8 +75,8 @@ export default function Home() {
           <li>
             <span className={styles.overlay}></span>
             <Image
-              src="/shared/MG_1564-scaled-e1596194843126.jpg"
-              alt=""
+              src="/shared/services/image-3.jpg"
+              alt="image service"
               layout="fill"
               objectFit="cover"
             />
@@ -84,8 +84,8 @@ export default function Home() {
           <li>
             <span className={styles.overlay}></span>
             <Image
-              src="/shared/MG_1564-scaled-e1596194843126.jpg"
-              alt=""
+              src="/shared/services/image-4.jpg"
+              alt="image service"
               layout="fill"
               objectFit="cover"
             />
@@ -135,7 +135,7 @@ export default function Home() {
           </li>
         </ul>
       </section>
-      <section className={styles.slide}>
+      {/* <section className={styles.slide}>
         <div>
           <Carousel
             swipeable={false}
@@ -157,7 +157,7 @@ export default function Home() {
             <div>Item 4</div>
           </Carousel>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

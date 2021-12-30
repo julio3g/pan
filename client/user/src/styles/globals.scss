@@ -11,7 +11,8 @@
   --gray-300: #a8a8b3;
   --gray-500: #807e7d;
   --gray-700: #323238;
-  --gray-800: #29292e;
+
+  --gray-800: #333232;
   --gray-850: #1f2729;
   --gray-900: #121214;
   --orange: #ee743f;
@@ -60,6 +61,28 @@ ul {
 
 svg {
   display: block;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 6px;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  border: none;
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gray-100);
+  border-radius: 8px;
+  cursor: move;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
 }
 
 .container {

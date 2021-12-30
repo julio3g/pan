@@ -7,7 +7,7 @@ export function Clients() {
       <ul className={styles.imagesClients}>
         <li>
           <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
+            src="/shared/services/image-1.jpg"
             alt="image"
             layout="fill"
             objectFit="cover"
@@ -15,7 +15,7 @@ export function Clients() {
         </li>
         <li>
           <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
+            src="/shared/services/image-2.jpg"
             alt="image"
             layout="fill"
             objectFit="cover"
@@ -23,7 +23,7 @@ export function Clients() {
         </li>
         <li>
           <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
+            src="/shared/services/image-3.jpg"
             alt="image"
             layout="fill"
             objectFit="cover"
@@ -31,7 +31,7 @@ export function Clients() {
         </li>
         <li>
           <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
+            src="/shared/services/image-4.jpg"
             alt="image"
             layout="fill"
             objectFit="cover"
@@ -39,7 +39,7 @@ export function Clients() {
         </li>
         <li>
           <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
+            src="/shared/services/image-5.jpg"
             alt="image"
             layout="fill"
             objectFit="cover"
@@ -47,7 +47,7 @@ export function Clients() {
         </li>
         <li>
           <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
+            src="/shared/services/image-6.jpg"
             alt="image"
             layout="fill"
             objectFit="cover"
@@ -55,15 +55,7 @@ export function Clients() {
         </li>
         <li>
           <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
-            alt="image"
-            layout="fill"
-            objectFit="cover"
-          />
-        </li>
-        <li>
-          <Image
-            src="/shared/MG_1564-scaled-e1596194843126.jpg"
+            src="/shared/services/image-7.jpg"
             alt="image"
             layout="fill"
             objectFit="cover"
