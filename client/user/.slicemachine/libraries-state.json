@@ -1,0 +1,62 @@
+{
+  "slices": {
+    "components": {
+      "works_carried_out": {
+        "library": "slices",
+        "id": "works_carried_out",
+        "name": "WorksCarriedOut",
+        "description": "WorksCarriedOut",
+        "model": {
+          "id": "works_carried_out",
+          "type": "SharedSlice",
+          "name": "WorksCarriedOut",
+          "description": "WorksCarriedOut",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "WorksCarriedOut",
+              "primary": {
+                "works": {
+                  "config": {
+                    "label": "Works",
+                    "constraint": {},
+                    "thumbnails": []
+                  },
+                  "type": "Image"
+                }
+              },
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "works_carried_out",
+            "items": [],
+            "primary": {
+              "works": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}

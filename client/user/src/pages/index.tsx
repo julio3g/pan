@@ -1,30 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/pages/home.module.scss';
+import { Slide } from '../components/Slide';
 import Arrow from '../../public/assets/arrow.svg';
-
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import styles from '../styles/pages/home.module.scss';
+import { GetStaticProps } from 'next';
 
 export default function Home() {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
   return (
     <main>
       <Head>
@@ -135,29 +117,43 @@ export default function Home() {
           </li>
         </ul>
       </section>
-      {/* <section className={styles.slide}>
-        <div>
-          <Carousel
-            swipeable={false}
-            draggable={false}
-            showDots={false}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            arrows={true}
-            autoPlaySpeed={1000}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            removeArrowOnDeviceType={['tablet', 'mobile']}
-          >
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 4</div>
-          </Carousel>
-        </div>
-      </section> */}
+      <Slide />
     </main>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+  const response = await prismic.query(
+    [Prismic.predicates.at('document.type', 'publication')],
+    {
+      fetch: [
+        'publication.title',
+        'publication.thumbnail',
+        'publication.content',
+      ],
+      pageSize: 3,
+      orderings: '[document.last_publication_date desc]',
+    },
+  );
+  const posts = response.results.map((post) => {
+    return {
+      slug: post.uid,
+      title: RichText.asText(post.data.title),
+      thumbnail: { url: post.data.thumbnail.url },
+      excerpt:
+        post.data.content.find((content: any) => content.type === 'paragraph')
+          ?.text ?? '',
+      createdAt: new Date(post.first_publication_date!).toLocaleString(
+        'pt-BR',
+        {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric',
+        },
+      ),
+    };
+  });
+  // revalidate: 60 * 60 (one hour), // In seconds
+  return { props: { posts }, revalidate: 60 * 60 };
+};

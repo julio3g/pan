@@ -1,0 +1,26 @@
+{
+  "id": "works_carried_out",
+  "type": "SharedSlice",
+  "name": "WorksCarriedOut",
+  "description": "WorksCarriedOut",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "WorksCarriedOut",
+      "primary": {
+        "works": {
+          "config": {
+            "label": "Works",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        }
+      },
+      "items": {}
+    }
+  ]
+}

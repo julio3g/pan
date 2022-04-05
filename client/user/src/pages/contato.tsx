@@ -34,7 +34,7 @@ export default function Contact() {
         />
         {!!messageError ? (
           <div className={styles.messageError}>
-            <h2>Um erro ocerreu!</h2>
+            <h2>Um erro ocorreu!</h2>
             <p>tente para o email construagil@hotmail.com</p>
           </div>
         ) : (

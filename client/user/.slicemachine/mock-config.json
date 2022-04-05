@@ -1,0 +1,9 @@
+{
+  "slices": {
+    "WorksCarriedOut": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}

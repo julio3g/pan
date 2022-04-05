@@ -102,15 +102,46 @@
 }
 
 .slide {
-  > div {
-    position: relative;
-    .react-multi-carousel-list {
-      position: static;
-      overflow: hidden;
-      margin: 0px -1.2rem;
+  .content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    .item {
+      width: 18rem;
+      height: 29rem;
+      background: var(--white);
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 60rem;
+    background-color: #00008b;
+    color: #fff;
+    li {
+      width: 18rem;
     }
   }
 }
+
+.react-multi-carousel-item {
+  transform: scale(0.8);
+}
+.react-multi-carousel-item--active {
+  transform: scale(1);
+}
+
+// .slide {
+//   > div {
+//     position: relative;
+//     .react-multi-carousel-list {
+//       position: static;
+//       overflow: hidden;
+//       margin: 0px -1.2rem;
+//     }
+//   }
+// }
 
 @media (max-width: 720px) {
   .banner {
